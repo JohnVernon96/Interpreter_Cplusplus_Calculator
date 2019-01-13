@@ -1,5 +1,5 @@
 //============================================================================
-// File Name   : johncarvajalphase1calc1.cpp
+// File Name   : johncarvajalcalc1phase2.cpp
 // Author      : John Carvajal
 // Class       : Organization of Programming Languages
 // Date        : 10/11/2018
@@ -24,9 +24,11 @@
 // stop
 //
 // All variables can be thought of as floating point. A "//" starts a comment,
-// which can occur anywhere on the line, or on a line by itself. All math is left
-// to right, no order of precedence. The legal operations are + , - , / and *.
-// Also, sqrt and ^ exist. There are no unary operators.
+// which can occur anywhere on the line, or on a line by itself. The legal 
+// operations are + , - , / and *. Also, sqrt and ^ exist. There are no unary 
+// operators.
+//
+// Phase 2: Added functionality for parenthesis with sqrt ( variabele )
 //
 // Here is a sample program showing the interactions:
 //
@@ -37,10 +39,10 @@
 // >load second
 // >ENTER VALUE FOR SECOND 3.0
 // >mem hypotenuse
-// >hypotenuse = first * first + second * second // I'm not sure this works due to l ? r precedence
-// >hypotenuse = sqrt hypotenuse
+// >hypotenuse = first * first + second * second
+// >hypotenuse = sqrt ( hypotenuse )
 // >print hypotenuse
-// >VALUE OF HYPOTENUSE IS 4.69042
+// >VALUE OF HYPOTENUSE IS 5.0
 // >stop
 // bash>
 //============================================================================
@@ -57,6 +59,7 @@
 
 using namespace std;
 
+// define valid input words
 enum TOKEN_TYPE{ADD, SUB, MULT, DIV, SQRT, EXP, VAR, PRINT, EQUAL, MEM, LOAD, STOPPROGRAM, NUM, LEFT_PARA, RIGHT_PARA};
 
 // create a token object
